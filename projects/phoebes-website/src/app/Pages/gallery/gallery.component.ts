@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FirebaseService } from '../../Services/firebase.service';
 
 @Component({
   selector: 'app-gallery',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
-  constructor() { }
+  illustrations: Observable<any[]> = new Observable<any[]>();
+  testImage: string = '';
+  constructor(private firebaseService: FirebaseService) {
+  }
 
   ngOnInit(): void {
+    this.illustrations = this.firebaseService.getGallery();
   }
 
 }

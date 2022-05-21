@@ -1,1 +1,10 @@
-<p>gallery works!</p>
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let item of illustrations | async" [colspan]="1" [rowspan]="1"
+        style="background-image: url({{item.Url}});">
+        <div fxLayout="row" fxLayoutAlign="end end">
+            <div style="width: 100%; height:100%;">
+                <h3>{{item.Name}}</h3>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
