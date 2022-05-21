@@ -10,11 +10,18 @@ import { environment } from '../environments/environment';
 import { MaterialModule } from './material/material.module';
 import { TestComponent } from './test/test.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderComponent } from './Pages/header/header.component';
+import { GalleryComponent } from './Pages/gallery/gallery.component';
+import { ShopComponent } from './Pages/shop/shop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
+    HeaderComponent,
+    GalleryComponent,
+    ShopComponent,
     
   ],
   imports: [
@@ -26,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFireAnalyticsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

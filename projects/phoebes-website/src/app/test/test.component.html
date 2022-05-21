@@ -1,13 +1,17 @@
-
+<ul>
+    <li class="text" *ngFor="let item of items | async">
+        {{item.name}} {{item.age}}
+    </li>
+</ul>
 <form [formGroup]="newItemForm">
     <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput type="text" formControlName="name">
     </mat-form-field>
-<form [formGroup]="newItemForm">
-    <mat-form-field>
-        <mat-label>Age</mat-label>
-        <input matInput type="text" formControlName="age">
-    </mat-form-field>
-    <button mat-raised-button (click)="onAddItem()">test</button>
-</form>
+    <form [formGroup]="newItemForm">
+        <mat-form-field>
+            <mat-label>Age</mat-label>
+            <input matInput type="text" formControlName="age">
+        </mat-form-field>
+        <button mat-raised-button (click)="onAddItem()">test</button>
+    </form>

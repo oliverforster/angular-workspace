@@ -1,6 +1,6 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}} {{item.age}}
-  </li>
-</ul>
-<app-test></app-test>
+<div fxLayout="row" fxLayoutAlign="center start">
+  <div fxFlex="95">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  </div>
+</div>
