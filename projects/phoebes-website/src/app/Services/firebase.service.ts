@@ -10,4 +10,8 @@ export class FirebaseService {
   setItem(newItem: any){
     this.firestore.collection('items').add(newItem);
   }
+
+  getGallery(){
+    return this.firestore.collection('items').valueChanges();
+  }
 }

@@ -1,5 +1,9 @@
-<p>header works! {{name}}</p>
-<ul>
-    <li><a routerLink="/gallery">illustration</a></li>
-    <li><a routerLink="/shop">shop</a></li>
-</ul>
+<mat-toolbar>
+    <span>Phoebe Kirk</span>
+    <span class="example-spacer"></span>
+    <button mat-button *ngFor="let link of tabs" routerLink="{{link.route}}" [ngClass]="{isActive: link.isActive}">
+        {{link.name}}
+    </button>
+    <button mat-button><mat-icon svgIcon="instagram"></mat-icon></button>
+
+</mat-toolbar>

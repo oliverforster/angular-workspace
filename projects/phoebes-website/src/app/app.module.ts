@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './Pages/header/header.component';
 import { GalleryComponent } from './Pages/gallery/gallery.component';
 import { ShopComponent } from './Pages/shop/shop.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ShopComponent } from './Pages/shop/shop.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

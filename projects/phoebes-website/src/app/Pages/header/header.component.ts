@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +9,28 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   name: string = '';
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.name = params['name'];
+  tabs: any[];
+  constructor(private router: Router) {
+    this.tabs = [
+      { name: "Illustration", route: "/illustration", isActive: true },
+      { name: "Shop", route: "/shop", isActive: false }
+    ]
+    this.router.events.subscribe((event) => {
+      event instanceof NavigationEnd ? this.makeTabActive(event.url) : null;
     });
   }
+
+  ngOnInit(): void {
+
+  }
+
+  makeTabActive(url: string) {
+    this.tabs.forEach(function(tab){
+      tab.isActive = false;
+      if(url == tab.route){
+        tab.isActive = true;
+      }
+    });
+  };
 
 }

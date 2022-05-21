@@ -3,17 +3,12 @@ import { MatSliderModule} from '@angular/material/slider'
 import { MatButtonModule} from '@angular/material/button'
 import { MatMenuModule} from '@angular/material/menu'
 import { MatToolbarModule} from '@angular/material/toolbar'
-import { MatIconModule} from '@angular/material/icon'
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon'
 import { MatCardModule} from '@angular/material/card'
 import { MatInputModule} from '@angular/material/input'
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatGridListModule} from '@angular/material/grid-list'
 
-// import {
-//   MatButtonModule,
-//   MatMenuModule,
-//   MatToolbarModule,
-//   MatIconModule,
-//   MatCardModule
-// } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -23,7 +18,8 @@ import { MatInputModule} from '@angular/material/input'
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   exports: [
     MatButtonModule,
@@ -32,7 +28,12 @@ import { MatInputModule} from '@angular/material/input'
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ]
 })
-export class MaterialModule {}
+export class MaterialModule {
+  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer){
+    this.matIconRegistry.addSvgIcon('instagram',this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/instagram.svg'));
+  }
+}
