@@ -17,4 +17,12 @@ export class GalleryComponent implements OnInit {
     this.illustrations = this.firebaseService.getGallery();
   }
 
+  onMouseEnter(item:any){
+    item.IsActive = true;
+  }
+
+  onMouseLeave(item:any){
+    item.IsActive = false;
+  }
+
 }

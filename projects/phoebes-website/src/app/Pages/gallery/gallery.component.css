@@ -1,4 +1,27 @@
-mat-grid-tile{
+mat-grid-tile {
     background-position: center;
     background-size: cover;
+}
+
+
+.matContainer {
+    height: 100%;
+}
+
+
+.matContainer h3 {
+    margin: 0 0 0 0;
+}
+
+
+.hidden {
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
+
+.showBox {
+    opacity: 1;
 }

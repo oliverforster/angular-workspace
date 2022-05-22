@@ -13,7 +13,7 @@ export class FirebaseService {
     this.firestore.collection('items').add(newItem);
   }
 
-  getGallery(){
+  getGallery (){
     return this.firestore.collection('Gallery').valueChanges();
   }
 }
